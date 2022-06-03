@@ -33,17 +33,17 @@ def compare_agcd_gcm_rcm(
         data_cmap = cmocean.cm.haline_r
         diff_cmap = 'BrBG'
         var_long_name = 'precipitation'
+        if metric_name in ['annual-clim']:
+            units = 'mm/year'
+        elif metric_name in ['rx1day']:
+            units = 'mm/day'
     elif var_name == 'tasmax':
         data_cmap = 'hot_r'
         diff_cmap = 'RdBu_r'
         var_long_name = 'daily maximum temperature'
+        units = 'Degrees Celsius'
     else:
         ValueError(f'Unrecognised variable {var_name}')
-        
-    if metric_name == 'annual-clim':
-        metric_long_name = f'Annual mean {var_long_name}'
-    else:
-        ValueError(f'Unrecognised metric {metric}')
     
     fig = plt.figure(figsize=[20, 13])
 
@@ -54,9 +54,9 @@ def compare_agcd_gcm_rcm(
         cmap=data_cmap,
         levels=data_levels,
         extend='max',
-        cbar_kwargs = {'orientation': 'horizontal', 'label': 'mm/year'}
+        cbar_kwargs = {'orientation': 'horizontal', 'label': units}
     )
-    ax1.set_title(f'{metric_long_name} (AGCD)')
+    ax1.set_title(f'{metric_name} {var_long_name} (AGCD)')
 
     ax2 = fig.add_subplot(232, projection=ccrs.PlateCarree())
     parent_da.plot(
@@ -65,9 +65,9 @@ def compare_agcd_gcm_rcm(
         cmap=data_cmap,
         levels=data_levels,
         extend='max',
-        cbar_kwargs = {'orientation': 'horizontal', 'label': 'mm/year'}
+        cbar_kwargs = {'orientation': 'horizontal', 'label': units}
     )
-    ax2.set_title(f'{metric_long_name} ({parent_name})')
+    ax2.set_title(f'{metric_name} {var_long_name} ({parent_name})')
 
     ax3 = fig.add_subplot(233, projection=ccrs.PlateCarree())
     parent_diff = parent_da - agcd_da
@@ -77,7 +77,7 @@ def compare_agcd_gcm_rcm(
         cmap=diff_cmap,
         levels=diff_levels,
         extend='both',
-        cbar_kwargs = {'orientation': 'horizontal', 'label': 'mm/year'}
+        cbar_kwargs = {'orientation': 'horizontal', 'label': units}
     )
     ax3.set_title(f'Difference ({parent_name} - AGCD)')
 
@@ -89,9 +89,9 @@ def compare_agcd_gcm_rcm(
             cmap=data_cmap,
             levels=data_levels,
             extend='max',
-            cbar_kwargs = {'orientation': 'horizontal', 'label': 'mm/year'}
+            cbar_kwargs = {'orientation': 'horizontal', 'label': units}
         )
-    ax5.set_title(f'{metric_long_name} ({rcm_name}-{parent_name})')
+    ax5.set_title(f'{metric_name} {var_long_name} ({rcm_name}-{parent_name})')
 
     ax6 = fig.add_subplot(236, projection=ccrs.PlateCarree())
     if type(rcm_da) == xr.core.dataarray.DataArray:
@@ -102,7 +102,7 @@ def compare_agcd_gcm_rcm(
             cmap=diff_cmap,
             levels=diff_levels,
             extend='both',
-            cbar_kwargs = {'orientation': 'horizontal', 'label': 'mm/year'}
+            cbar_kwargs = {'orientation': 'horizontal', 'label': units}
         )
     ax6.set_title(f'Difference ({rcm_name}-{parent_name} - AGCD)')
 
