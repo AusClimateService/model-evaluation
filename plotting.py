@@ -14,6 +14,38 @@ import spatial_selection
 nrm_clusters = gp.read_file('/g/data/xv83/dbi599/shapefiles/NRM_clusters/NRM_clusters.shp')
 nrm_sub_clusters = gp.read_file('/g/data/xv83/dbi599/shapefiles/NRM_sub_clusters/NRM_sub_clusters.shp')
 
+data_cmap_dict = {
+    ('tasmax', 'annual-clim'): 'RdBu_r',
+    ('pr', 'annual-clim'): cmocean.cm.haline_r,
+    ('pr', 'rx1day'): cmocean.cm.haline_r,
+    ('pr', 'cdd'): cmocean.cm.haline,
+    ('pr', 'cwd'): cmocean.cm.haline_r,
+}
+
+diff_cmap_dict = {
+    ('tasmax', 'annual-clim'): 'RdBu_r',
+    ('pr', 'annual-clim'): 'BrBG',
+    ('pr', 'rx1day'): 'BrBG',
+    ('pr', 'cdd'): 'BrBG_r',
+    ('pr', 'cwd'): 'BrBG',
+}
+
+units_dict = {
+    ('tasmax', 'annual-clim'): 'degrees (C)',
+    ('pr', 'annual-clim'): 'mm/year',
+    ('pr', 'rx1day'): 'mm/day',
+    ('pr', 'cdd'): 'days',
+    ('pr', 'cwd'): 'days',
+}
+
+title_dict = {
+    ('tasmax', 'annual-clim'): 'Annual mean daily maximum temperature',
+    ('pr', 'annual-clim'): 'Total annual precipitation',
+    ('pr', 'rx1day'): 'Maximum 1-day precipitation',
+    ('pr', 'cdd'): 'Annual mean maximum consecutive dry days',
+    ('pr', 'cwd'): 'Annual mean maximum consecutive wet days',
+}
+
 def compare_agcd_gcm_rcm(
     agcd_da,
     parent_da,
@@ -29,22 +61,11 @@ def compare_agcd_gcm_rcm(
 ):
     """Creating a plot comparing RCM and parent GCM data to observations."""
 
-    if var_name == 'pr':
-        data_cmap = cmocean.cm.haline_r
-        diff_cmap = 'BrBG'
-        var_long_name = 'precipitation'
-        if metric_name in ['annual-clim']:
-            units = 'mm/year'
-        elif metric_name in ['rx1day']:
-            units = 'mm/day'
-    elif var_name == 'tasmax':
-        data_cmap = 'hot_r'
-        diff_cmap = 'RdBu_r'
-        var_long_name = 'daily maximum temperature'
-        units = 'Degrees Celsius'
-    else:
-        ValueError(f'Unrecognised variable {var_name}')
-    
+    data_cmap = data_cmap_dict[(var_name, metric_name)]
+    diff_cmap = diff_cmap_dict[(var_name, metric_name)]
+    units = units_dict[(var_name, metric_name)]
+    title = title_dict[(var_name, metric_name)]
+        
     fig = plt.figure(figsize=[20, 13])
 
     ax1 = fig.add_subplot(231, projection=ccrs.PlateCarree())
@@ -56,7 +77,7 @@ def compare_agcd_gcm_rcm(
         extend='max',
         cbar_kwargs = {'orientation': 'horizontal', 'label': units}
     )
-    ax1.set_title(f'{metric_name} {var_long_name} (AGCD)')
+    ax1.set_title(f'{title} (AGCD)')
 
     ax2 = fig.add_subplot(232, projection=ccrs.PlateCarree())
     parent_da.plot(
@@ -67,7 +88,7 @@ def compare_agcd_gcm_rcm(
         extend='max',
         cbar_kwargs = {'orientation': 'horizontal', 'label': units}
     )
-    ax2.set_title(f'{metric_name} {var_long_name} ({parent_name})')
+    ax2.set_title(f'{title} ({parent_name})')
 
     ax3 = fig.add_subplot(233, projection=ccrs.PlateCarree())
     parent_diff = parent_da - agcd_da
@@ -91,7 +112,7 @@ def compare_agcd_gcm_rcm(
             extend='max',
             cbar_kwargs = {'orientation': 'horizontal', 'label': units}
         )
-    ax5.set_title(f'{metric_name} {var_long_name} ({rcm_name}-{parent_name})')
+    ax5.set_title(f'{title} ({rcm_name}-{parent_name})')
 
     ax6 = fig.add_subplot(236, projection=ccrs.PlateCarree())
     if type(rcm_da) == xr.core.dataarray.DataArray:
