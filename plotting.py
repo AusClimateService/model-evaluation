@@ -15,33 +15,45 @@ nrm_clusters = gp.read_file('/g/data/xv83/dbi599/shapefiles/NRM_clusters/NRM_clu
 nrm_sub_clusters = gp.read_file('/g/data/xv83/dbi599/shapefiles/NRM_sub_clusters/NRM_sub_clusters.shp')
 
 data_cmap_dict = {
-    ('tasmax', 'annual-clim'): 'RdBu_r',
+    ('tasmax', 'annual-clim'): 'hot_r',
+    ('tasmax', 'txx'): 'hot_r',
     ('pr', 'annual-clim'): cmocean.cm.haline_r,
     ('pr', 'rx1day'): cmocean.cm.haline_r,
+    ('pr', 'r95ptot'): cmocean.cm.haline_r,
+    ('pr', 'r10mm'): cmocean.cm.haline_r,
     ('pr', 'cdd'): cmocean.cm.haline,
     ('pr', 'cwd'): cmocean.cm.haline_r,
 }
 
 diff_cmap_dict = {
     ('tasmax', 'annual-clim'): 'RdBu_r',
+    ('tasmax', 'txx'): 'RdBu_r',
     ('pr', 'annual-clim'): 'BrBG',
     ('pr', 'rx1day'): 'BrBG',
+    ('pr', 'r95ptot'): 'BrBG',
     ('pr', 'cdd'): 'BrBG_r',
     ('pr', 'cwd'): 'BrBG',
+    ('pr', 'r10mm'): 'BrBG',
 }
 
 units_dict = {
     ('tasmax', 'annual-clim'): 'degrees (C)',
+    ('tasmax', 'txx'): 'degrees (C)',
     ('pr', 'annual-clim'): 'mm/year',
     ('pr', 'rx1day'): 'mm/day',
+    ('pr', 'r95ptot'): 'mm/year',
+    ('pr', 'r10mm'): 'days',
     ('pr', 'cdd'): 'days',
     ('pr', 'cwd'): 'days',
 }
 
 title_dict = {
     ('tasmax', 'annual-clim'): 'Annual mean daily maximum temperature',
+    ('tasmax', 'txx'): 'Annual mean maximum daily maximum temperature',
     ('pr', 'annual-clim'): 'Total annual precipitation',
     ('pr', 'rx1day'): 'Maximum 1-day precipitation',
+    ('pr', 'r95ptot'): 'Annual mean total precipitation from heavy rain (>95pct)',
+    ('pr', 'r10mm'): 'Annual mean number of heavy rainfall days (>10mm)',
     ('pr', 'cdd'): 'Annual mean maximum consecutive dry days',
     ('pr', 'cwd'): 'Annual mean maximum consecutive wet days',
 }
