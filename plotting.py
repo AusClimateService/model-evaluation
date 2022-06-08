@@ -17,6 +17,7 @@ nrm_sub_clusters = gp.read_file('/g/data/xv83/dbi599/shapefiles/NRM_sub_clusters
 data_cmap_dict = {
     ('tasmax', 'annual-clim'): 'hot_r',
     ('tasmax', 'txx'): 'hot_r',
+    ('tasmax', 'txn'): cmocean.cm.ice,
     ('pr', 'annual-clim'): cmocean.cm.haline_r,
     ('pr', 'rx1day'): cmocean.cm.haline_r,
     ('pr', 'r95ptot'): cmocean.cm.haline_r,
@@ -28,6 +29,7 @@ data_cmap_dict = {
 diff_cmap_dict = {
     ('tasmax', 'annual-clim'): 'RdBu_r',
     ('tasmax', 'txx'): 'RdBu_r',
+    ('tasmax', 'txn'): 'RdBu_r',
     ('pr', 'annual-clim'): 'BrBG',
     ('pr', 'rx1day'): 'BrBG',
     ('pr', 'r95ptot'): 'BrBG',
@@ -39,6 +41,7 @@ diff_cmap_dict = {
 units_dict = {
     ('tasmax', 'annual-clim'): 'degrees (C)',
     ('tasmax', 'txx'): 'degrees (C)',
+    ('tasmax', 'txn'): 'degrees (C)',
     ('pr', 'annual-clim'): 'mm/year',
     ('pr', 'rx1day'): 'mm/day',
     ('pr', 'r95ptot'): 'mm/year',
@@ -49,13 +52,14 @@ units_dict = {
 
 title_dict = {
     ('tasmax', 'annual-clim'): 'Annual mean daily maximum temperature',
-    ('tasmax', 'txx'): 'Annual mean maximum daily maximum temperature',
+    ('tasmax', 'txx'): 'Annual mean maximum daily maximum temperature (TXx)',
+    ('tasmax', 'txn'): 'Annual mean minimum daily maximum temperature (TXn)',
     ('pr', 'annual-clim'): 'Total annual precipitation',
-    ('pr', 'rx1day'): 'Maximum 1-day precipitation',
-    ('pr', 'r95ptot'): 'Annual mean total precipitation from heavy rain (>95pct)',
-    ('pr', 'r10mm'): 'Annual mean number of heavy rainfall days (>10mm)',
-    ('pr', 'cdd'): 'Annual mean maximum consecutive dry days',
-    ('pr', 'cwd'): 'Annual mean maximum consecutive wet days',
+    ('pr', 'rx1day'): 'Annual mean maximum 1-day precipitation (RX1day)',
+    ('pr', 'r95ptot'): 'Annual mean total precipitation from heavy rain (r95ptot)',
+    ('pr', 'r10mm'): 'Annual mean number of heavy rainfall days (r10mm)',
+    ('pr', 'cdd'): 'Annual mean maximum consecutive dry days (<1mm; CDD)',
+    ('pr', 'cwd'): 'Annual mean maximum consecutive wet days (>1mm; CWD)',
 }
 
 def compare_agcd_gcm_rcm(
@@ -89,7 +93,7 @@ def compare_agcd_gcm_rcm(
         extend='max',
         cbar_kwargs = {'orientation': 'horizontal', 'label': units}
     )
-    ax1.set_title(f'{title} (AGCD)')
+    ax1.set_title('AGCD')
 
     ax2 = fig.add_subplot(232, projection=ccrs.PlateCarree())
     parent_da.plot(
@@ -100,7 +104,7 @@ def compare_agcd_gcm_rcm(
         extend='max',
         cbar_kwargs = {'orientation': 'horizontal', 'label': units}
     )
-    ax2.set_title(f'{title} ({parent_name})')
+    ax2.set_title(f'{parent_name}')
 
     ax3 = fig.add_subplot(233, projection=ccrs.PlateCarree())
     parent_diff = parent_da - agcd_da
@@ -124,7 +128,7 @@ def compare_agcd_gcm_rcm(
             extend='max',
             cbar_kwargs = {'orientation': 'horizontal', 'label': units}
         )
-    ax5.set_title(f'{title} ({rcm_name}-{parent_name})')
+    ax5.set_title(f'{rcm_name}-{parent_name}')
 
     ax6 = fig.add_subplot(236, projection=ccrs.PlateCarree())
     if type(rcm_da) == xr.core.dataarray.DataArray:
@@ -145,7 +149,8 @@ def compare_agcd_gcm_rcm(
     for ax in ax_list:
         ax.coastlines()
         ax.add_feature(cartopy.feature.STATES, linewidth=0.3)
-
+    plt.suptitle(title, fontsize='x-large', y=0.95)
+        
     outfile = f'/g/data/xv83/dbi599/model-evaluation/{var_name}_{metric_name}_{rcm_name}-{parent_name}_{start_date}_{end_date}.png'
     plt.savefig(outfile, bbox_inches='tight', facecolor='white', dpi=300)
     print(outfile)
