@@ -7,9 +7,16 @@ import matplotlib.pyplot as plt
 import cmocean
 import geopandas as gp
 import numpy as np
+import matplotlib as mpl
 
 import spatial_selection
 
+
+mpl.rcParams['axes.labelsize'] = 'x-large'
+mpl.rcParams['axes.titlesize'] = 'xx-large'
+mpl.rcParams['xtick.labelsize'] = 'large'
+mpl.rcParams['ytick.labelsize'] = 'x-large'
+mpl.rcParams['legend.fontsize'] = 'x-large'
 
 nrm_clusters = gp.read_file('/g/data/xv83/dbi599/shapefiles/NRM_clusters/NRM_clusters.shp')
 nrm_sub_clusters = gp.read_file('/g/data/xv83/dbi599/shapefiles/NRM_sub_clusters/NRM_sub_clusters.shp')
@@ -44,7 +51,7 @@ units_dict = {
     ('tasmax', 'txn'): 'degrees (C)',
     ('pr', 'annual-clim'): 'mm/year',
     ('pr', 'rx1day'): 'mm/day',
-    ('pr', 'r95ptot'): 'mm/year',
+    ('pr', 'r95ptot'): '%',
     ('pr', 'r10mm'): 'days',
     ('pr', 'cdd'): 'days',
     ('pr', 'cwd'): 'days',
@@ -93,7 +100,7 @@ def compare_agcd_gcm_rcm(
         extend='max',
         cbar_kwargs = {'orientation': 'horizontal', 'label': units}
     )
-    ax1.set_title('AGCD')
+    ax1.set_title('(a) AGCD')
 
     ax2 = fig.add_subplot(232, projection=ccrs.PlateCarree())
     parent_da.plot(
@@ -104,7 +111,7 @@ def compare_agcd_gcm_rcm(
         extend='max',
         cbar_kwargs = {'orientation': 'horizontal', 'label': units}
     )
-    ax2.set_title(f'{parent_name}')
+    ax2.set_title(f'(b) {parent_name}')
 
     ax3 = fig.add_subplot(233, projection=ccrs.PlateCarree())
     parent_diff = parent_da - agcd_da
@@ -116,7 +123,7 @@ def compare_agcd_gcm_rcm(
         extend='both',
         cbar_kwargs = {'orientation': 'horizontal', 'label': units}
     )
-    ax3.set_title(f'Difference ({parent_name} - AGCD)')
+    ax3.set_title(f'Difference:\n(c) {parent_name} - AGCD')
 
     ax5 = fig.add_subplot(235, projection=ccrs.PlateCarree())
     if type(rcm_da) == xr.core.dataarray.DataArray:
@@ -128,7 +135,7 @@ def compare_agcd_gcm_rcm(
             extend='max',
             cbar_kwargs = {'orientation': 'horizontal', 'label': units}
         )
-    ax5.set_title(f'{rcm_name}-{parent_name}')
+    ax5.set_title(f'(d) {rcm_name}-{parent_name}')
 
     ax6 = fig.add_subplot(236, projection=ccrs.PlateCarree())
     if type(rcm_da) == xr.core.dataarray.DataArray:
@@ -141,7 +148,7 @@ def compare_agcd_gcm_rcm(
             extend='both',
             cbar_kwargs = {'orientation': 'horizontal', 'label': units}
         )
-    ax6.set_title(f'Difference ({rcm_name}-{parent_name} - AGCD)')
+    ax6.set_title(f'Difference:\n(e) {rcm_name}-{parent_name} - AGCD')
 
     ax_list = [ax1, ax2, ax3]
     if type(rcm_da) == xr.core.dataarray.DataArray:
@@ -149,7 +156,7 @@ def compare_agcd_gcm_rcm(
     for ax in ax_list:
         ax.coastlines()
         ax.add_feature(cartopy.feature.STATES, linewidth=0.3)
-    plt.suptitle(title, fontsize='x-large', y=0.95)
+    plt.suptitle(title, fontsize='xx-large', y=0.95)
         
     outfile = f'/g/data/xv83/dbi599/model-evaluation/{var_name}_{metric_name}_{rcm_name}-{parent_name}_{start_date}_{end_date}.png'
     plt.savefig(outfile, bbox_inches='tight', facecolor='white', dpi=300)
@@ -190,7 +197,7 @@ def temporal_evaluation(
         vmin=-1,
         cbar_kwargs = {'orientation': 'horizontal', 'label': 'corrrelation'}
     )
-    ax1.set_title(f'Temporal correlation ({parent_name} vs. AGCD)')
+    ax1.set_title(f'(a) Temporal correlation:\n{parent_name} vs. AGCD')
 
     ax2 = fig.add_subplot(222, projection=ccrs.PlateCarree())
     parent_std_ratio.plot(
@@ -201,7 +208,7 @@ def temporal_evaluation(
     extend='both',
     cbar_kwargs = {'orientation': 'horizontal', 'label': 'stdev ratio'}
     )
-    ax2.set_title(f'Temporal standard deviation ratio ({parent_name} vs. AGCD)')
+    ax2.set_title(f'(b) Temporal standard deviation ratio:\n{parent_name} vs. AGCD')
     
     ax3 = fig.add_subplot(223, projection=ccrs.PlateCarree())
     if type(rcm_monthly_clim) == xr.core.dataarray.DataArray:
@@ -213,7 +220,7 @@ def temporal_evaluation(
             vmin=-1,
             cbar_kwargs = {'orientation': 'horizontal', 'label': 'corrrelation'}
         )   
-    ax3.set_title(f'Temporal correlation ({rcm_name}-{parent_name} vs. AGCD)')
+    ax3.set_title(f'(c) Temporal correlation:\n{rcm_name}-{parent_name} vs. AGCD')
 
     ax4 = fig.add_subplot(224, projection=ccrs.PlateCarree())
     if type(rcm_monthly_clim) == xr.core.dataarray.DataArray:
@@ -225,7 +232,7 @@ def temporal_evaluation(
             extend='both',
             cbar_kwargs = {'orientation': 'horizontal', 'label': 'stdev ratio'}
         )
-    ax4.set_title(f'Temporal standard deviation ratio ({rcm_name}-{parent_name} vs. AGCD)')
+    ax4.set_title(f'(d) Temporal standard deviation ratio:\n{rcm_name}-{parent_name} vs. AGCD')
 
     ax_list = [ax1, ax2]
     if type(rcm_monthly_clim) == xr.core.dataarray.DataArray:
