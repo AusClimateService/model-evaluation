@@ -1,4 +1,5 @@
 import calendar
+import string
 
 import xarray as xr
 import cartopy
@@ -8,6 +9,7 @@ import cmocean
 import geopandas as gp
 import numpy as np
 import matplotlib as mpl
+from matplotlib import gridspec
 
 import spatial_selection
 
@@ -88,6 +90,14 @@ title_dict = {
     ('pr', 'cdd'): 'Annual mean maximum consecutive dry days (<1mm; CDD)',
     ('pr', 'cwd'): 'Annual mean maximum consecutive wet days (>1mm; CWD)',
 }
+
+sub_cluster_list = [
+    'Monsoonal North (West)', 'Wet Tropics', 'Monsoonal North (East)', 'East Coast (North)',
+    'Rangelands (North)', 'Rangelands (South)', 'Central Slopes', 'East Coast (South)',
+    'Southern and South Western Flatlands (West)', 'Southern and South Western Flatlands (East)', 'Murray Basin', '',
+    'Southern Slopes (Vic West)', 'Southern Slopes (Vic/NSW East)', 'Southern Slopes (Tas West)', 'Southern Slopes (Tas East)'
+]
+
 
 def compare_agcd_gcm_rcm(
     agcd_da,
@@ -310,3 +320,57 @@ def seasonal_cycle(
     plt.ylabel('average precipitation (mm/month)')
     plt.title(title)
     plt.show()
+    
+
+def seasonal_clusters(var_name, parent_monthly_clim, agcd_monthly_clim, rcm_monthly_clim):
+    """Plot seasonal cycle for eahc NRM sub-cluster"""
+
+    if var_name == 'pr':
+        ylabel = 'average precipitation (mm/month)'
+    elif var_name == 'tasmax':
+        ylabel = 'average daily maximum temperature (C)'
+    elif var_name == 'tasmin':
+        ylabel = 'average daily minimum temperature (C)'
+    else:
+        raise ValueError(f'No defaults defined for variable {var}')
+    
+    parent_cycle = spatial_selection.select_shapefile_regions(
+        parent_monthly_clim,
+        nrm_sub_clusters,
+        header='label',
+        agg='weighted_mean'
+    )
+
+    agcd_cycle = spatial_selection.select_shapefile_regions(
+        agcd_monthly_clim,
+        nrm_sub_clusters,
+        header='label',
+        agg='weighted_mean',
+    )
+
+    rcm_cycle = spatial_selection.select_shapefile_regions(
+        rcm_monthly_clim,
+        nrm_sub_clusters,
+        header='label',
+        agg='weighted_mean'
+    )
+    
+    xticks = np.arange(1,13)
+    xlabels = [calendar.month_abbr[i] for i in xticks]
+
+    fig = plt.figure(figsize=[38, 30])
+    gs = gridspec.GridSpec(4, 4)
+    for plot_num, cluster_name in enumerate(sub_cluster_list):
+        if cluster_name:
+            ax = plt.subplot(gs[plot_num])
+            agcd_cycle.sel({'region': cluster_name}).plot(ax=ax, label='AGCD', color='black')
+            parent_cycle.sel({'region': cluster_name}).plot(ax=ax, label='ACCESS-CM2')
+            rcm_cycle.sel({'region': cluster_name}).plot(ax=ax, label='BARPA')
+            ax.set_xticks(xticks, xlabels)
+            ax.legend()
+            ax.set_ylabel(ylabel)
+            letter = string.ascii_lowercase[plot_num]
+            ax.set_title(f'({letter}) {cluster_name}')
+    outfile = f'/g/data/xv83/dbi599/model-evaluation/{var_name}_seasonal-cycle-nrm_BARPA-ACCESS-CM2_1980-1989.png'
+    plt.savefig(outfile, bbox_inches='tight', facecolor='white', dpi=300)
+    print(outfile)
