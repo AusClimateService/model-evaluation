@@ -322,7 +322,14 @@ def seasonal_cycle(
     plt.show()
     
 
-def seasonal_clusters(var_name, parent_monthly_clim, agcd_monthly_clim, rcm_monthly_clim):
+def seasonal_clusters(
+    var_name,
+    parent_monthly_clim,
+    agcd_monthly_clim,
+    rcm_monthly_clim,
+    start_date,
+    end_date,
+):
     """Plot seasonal cycle for eahc NRM sub-cluster"""
 
     if var_name == 'pr':
@@ -371,6 +378,6 @@ def seasonal_clusters(var_name, parent_monthly_clim, agcd_monthly_clim, rcm_mont
             ax.set_ylabel(ylabel)
             letter = string.ascii_lowercase[plot_num]
             ax.set_title(f'({letter}) {cluster_name}')
-    outfile = f'/g/data/xv83/dbi599/model-evaluation/{var_name}_seasonal-cycle-nrm_BARPA-ACCESS-CM2_1980-1989.png'
+    outfile = f'/g/data/xv83/dbi599/model-evaluation/{var_name}_seasonal-cycle-nrm_BARPA-ACCESS-CM2_{start_date}_{end_date}.png'
     plt.savefig(outfile, bbox_inches='tight', facecolor='white', dpi=300)
     print(outfile)
