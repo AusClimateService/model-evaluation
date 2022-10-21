@@ -57,6 +57,7 @@ This file maintains a list of the xclim/icclim/climpact indices required for mod
 
 ... and so on.
 
+#### [Pros/Cons of each package](https://github.com/AusClimateService/ccam-evaluation/blob/main/xclim_icclim_climpact_pro_cons.md)
 ---
 ### References
 Below are some references for xclim, icclim, and climpact indices. Please see the [three indices lists](#list-of-indicators-for-each-package) above for specific index references
