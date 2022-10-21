@@ -1,6 +1,6 @@
 # Indices
 
-This file maintains a list of the xclim/icclim/climpact indices required for CCAM evaluation.
+This file maintains a list of the xclim/icclim/climpact indices required for model evaluation.
 
 #### List of indicators for each package
 - xclim indices: https://xclim.readthedocs.io/en/stable/indicators.html
