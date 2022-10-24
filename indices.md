@@ -50,10 +50,10 @@ This file maintains a list of the xclim/icclim/climpact indices required for mod
 ### Compound indices
 | Index | Description | xclim | icclim | Climpact | Hazard | Notes |
 | - | - | - | - | - | - | - |
-| cd | Cold and dry days | :heavy_check_mark: | :heavy_check_mark: | - | - | Days with ```tg```\```tmm``` < 25th percentile of daily mean temperature and ```rr``` <25th percentile of daily precipitation sum (cold/dry days) |
-| cw | Cold and wet days | :heavy_check_mark: | :heavy_check_mark: | - | - | Days with ```tg```\```tmm``` < 25th percentile of daily mean temperature and ```rr``` >75th percentile of daily precipitation sum (cold/wet days) |
-| wd | Warm and dry days | :heavy_check_mark: | :heavy_check_mark: | - | - | Days with ```tg```\```tmm``` > 75th percentile of daily mean temperature and ```rr``` <25th percentile of daily precipitation sum (warm/dry days) |
-| ww | Warm and wet days | :heavy_check_mark: | :heavy_check_mark: | - | - | Days with ```tg```\```tmm``` > 75th percentile of daily mean temperature and ```rr``` >75th percentile of daily precipitation sum (warm/wet days) |
+| cd | Cold and dry days | :heavy_check_mark: | :heavy_check_mark: | - | - | Days with ```tg```\\```tmm``` < 25th percentile of daily mean temperature and ```rr``` <25th percentile of daily precipitation sum (cold/dry days) |
+| cw | Cold and wet days | :heavy_check_mark: | :heavy_check_mark: | - | - | Days with ```tg```\\```tmm``` < 25th percentile of daily mean temperature and ```rr``` >75th percentile of daily precipitation sum (cold/wet days) |
+| wd | Warm and dry days | :heavy_check_mark: | :heavy_check_mark: | - | - | Days with ```tg```\\```tmm``` > 75th percentile of daily mean temperature and ```rr``` <25th percentile of daily precipitation sum (warm/dry days) |
+| ww | Warm and wet days | :heavy_check_mark: | :heavy_check_mark: | - | - | Days with ```tg```\\```tmm``` > 75th percentile of daily mean temperature and ```rr``` >75th percentile of daily precipitation sum (warm/wet days) |
 
 ... and so on.
 
