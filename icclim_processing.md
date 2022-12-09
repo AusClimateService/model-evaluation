@@ -19,13 +19,13 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 ### GCMs
 | Model | Realisation | Processed | QC | Location | Person responsible | Notes |
 | - | - | - | - | - | - | - |
-| ACCESS-CM2 | r4i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CSIRO-ARCCSS-ACCESS-CM2/historical/r4i1p1f1/none/v1/climdex/` | @ngben | - |
-| ACCESS-ESM1-5 | r6i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CSIRO-ACCESS-ESM1-5/historical/r6i1p1f1/none/v1/climdex/` | @ngben | - |
+| ACCESS-CM2 | r4i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CSIRO-ARCCSS-ACCESS-CM2/historical/r4i1p1f1/none/none/climdex/` | @ngben | - |
+| ACCESS-ESM1-5 | r6i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CSIRO-ACCESS-ESM1-5/historical/r6i1p1f1/none/none/climdex/` | @ngben | - |
 | CESM2 | r11i1p1f1 | :x: | :x: | - | @ngben | Missing daily tasmax and tasmin |
-| CMCC-ESM2 | r1i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CMCC-CMCC-ESM2/historical/r1i1p1f1/none/v1/climdex` | @ngben | - |
-| CNRM-ESM2-1 | r1i1p1f2 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CNRM-CERFACS-CNRM-ESM2-1/historical/r1i1p1f2/none/v1/climdex/` | @ngben | - |
-| EC-Earth3 | r1i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/EC-Earth-Consortium-EC-Earth3/historical/r1i1p1f1/none/v1/climdex/` | @ngben | - |
-| NorESM2-MM | r1i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/NCC-NorESM2-MM/historical/r1i1p1f1/none/v1/climdex` | @ngben | - |
+| CMCC-ESM2 | r1i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CMCC-CMCC-ESM2/historical/r1i1p1f1/none/none/climdex` | @ngben | - |
+| CNRM-ESM2-1 | r1i1p1f2 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CNRM-CERFACS-CNRM-ESM2-1/historical/r1i1p1f2/none/none/climdex/` | @ngben | - |
+| EC-Earth3 | r1i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/EC-Earth-Consortium-EC-Earth3/historical/r1i1p1f1/none/none/climdex/` | @ngben | - |
+| NorESM2-MM | r1i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/NCC-NorESM2-MM/historical/r1i1p1f1/none/none/climdex` | @ngben | - |
 
 ### CCAM
 | Model | Realisation | Processed | QC | Location | Person responsible | Notes |
