@@ -2,7 +2,7 @@
 
 This file maintains a list of Obs (AGCDv1), reanalysis (ERA5), GCMs and downscaled runs which have been or are being processed using [icclim](https://github.com/AusClimateService/indices)
 
-For historical GCM/RCM data, period used is 19790101-20141231
+For historical GCM/CCAM data, period used is 19790101-20141231
 
 For AGCD/ERA5 and CCAM-ERA5, period used is 19790101-20211231
 
