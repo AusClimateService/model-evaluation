@@ -13,8 +13,8 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 ### Observations & Reanalysis
 | Model | Realisation | Processed | QC | Location | Person responsible | Notes |
 | - | - | - | - | - | - | - |
-| AGCDv1 | - | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-r005/none/BOM-AGCD/historical/none/none/v1/climdex` | @ngben | Missing tas |
-| ERA5 | - | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-25/none/ECMWF-ERA5/historical/none/none/v1/climdex` | @ngben | - |
+| AGCDv1 | - | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-r005/none/BOM-AGCD/historical/none/none/none/climdex` | @ngben | Missing tas |
+| ERA5 | - | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-25/none/ECMWF-ERA5/historical/none/none/none/climdex` | @ngben | - |
 
 ### GCMs
 | Model | Realisation | Processed | QC | Location | Person responsible | Notes |
