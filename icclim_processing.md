@@ -17,8 +17,8 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 | ERA5 | - | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-25/none/ECMWF-ERA5/historical/none/none/none/climdex` | @ngben | - |
 
 ### GCMs
-| Model | Realisation | Processed | QC | Location | Person responsible | Notes |
-| - | - | - | - | - | - | - |
+| Model | Realisation  | Processed | QC | Location | Person responsible | Notes |
+| - | - | - | - | - | - | - | - |
 | ACCESS-CM2 | r4i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CSIRO-ARCCSS-ACCESS-CM2/historical/r4i1p1f1/none/none/climdex/` | @ngben | - |
 | ACCESS-ESM1-5 | r6i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CSIRO-ACCESS-ESM1-5/historical/r6i1p1f1/none/none/climdex/` | @ngben | - |
 | CESM2 | r11i1p1f1 | :x: | :x: | - | @ngben | Missing daily tasmax and tasmin |
@@ -32,3 +32,11 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 | - | - | - | - | - | - | - |
 | CCAM-ERA5 | - | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/ECMWF-ERA5/evaluation/none/CSIRO-CCAM-2203/v1/climdex` | @ngben | - |
 | CCAM-NorESM2-MM | r1i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/historical/r1i1p1f1/CSIRO-CCAM-2203/v1/climdex/` | @ngben | - |
+
+### BARPA
+| Model | Realisation | Processed | QC | Location | Person responsible | Notes |
+| - | - | - | - | - | - | - |
+| BARPA-ERA5 | - | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/ECMWF-ERA5/evaluation/none/CSIRO-CCAM-2203/v1/climdex` | @chunhsusu | - |
+| BARPA-ACCESS-CM2 | r4i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/historical/r1i1p1f1/CSIRO-CCAM-2203/v1/climdex/` | @ngben, @EmmaHoward | - |
+| BARPA-ACCESS-ESM1-5 | r6i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/historical/r1i1p1f1/CSIRO-CCAM-2203/v1/climdex/` | @ngben, @EmmaHoward | - |
+| BARPA-EC-Earth3 | r1i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/historical/r1i1p1f1/CSIRO-CCAM-2203/v1/climdex/` | @ngben, @EmmaHoward | - |
