@@ -2,6 +2,10 @@
 
 This file maintains a list of Obs (AGCDv1), reanalysis (ERA5), GCMs and downscaled runs which have been or are being processed using [icclim](https://github.com/AusClimateService/indices)
 
+### Issues (2023-02-20), currently waiting for icclim to fix
+- R75pTOT/R95pTOT/R99pTOT in RCMs/GCMs (data with `kg m-2 s-1` units) have no/missing data
+- DTR/vDTR/ETR are converted to `degC` after calculation, causing RCMs/GCMs (data with `degK` units) to be offset by -273.15
+
 ### Periods analysed
 Follows periods outlined in [evaluation_standards.md](https://github.com/AusClimateService/ccam-evaluation/blob/main/evaluation_standards.md)
 
@@ -21,7 +25,7 @@ Follows periods outlined in [evaluation_standards.md](https://github.com/AusClim
   - Mid: `20350101-20641231`
   - Far: `20700101-20991231`
 
-See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/master/indices.md) for a full table and documentation
+See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/master/indices.md) for a full table and documentation. Scripts used for calculation can be found [here](https://github.com/AusClimateService/ccam-evaluation/tree/main/bxn599/icclim_indices)
 
 ### Observations & Reanalysis
 | Model | Processed | QC | Location | Person responsible | Notes |
