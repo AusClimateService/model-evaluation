@@ -2,11 +2,24 @@
 
 This file maintains a list of Obs (AGCDv1), reanalysis (ERA5), GCMs and downscaled runs which have been or are being processed using [icclim](https://github.com/AusClimateService/indices)
 
-For historical GCM/CCAM data, period used is 19790101-20141231
+### Periods analysed
+Follows periods outlined in [evaluation_standards.md](https://github.com/AusClimateService/ccam-evaluation/blob/main/evaluation_standards.md)
 
-For AGCD/ERA5 and CCAM-ERA5, period used is 19790101-20211231
+#### Observations, reanalysis and evaluation runs
+- AGCD, ERA5, and CCAM-ERA5: `19790101-20211231`
+- BARPA-R-ERA5: `19790101-20201231`
+- Percentile indices (#16: TX10p, TX90p, TN10p, TN90p, TG10p, TG90p, R75p, R75pTOT, R95p, R95pTOT, R99p, R99pTOT, CD, CW, WD, WW): `19850101-20141231`
 
-For percentile indices (#16: TX10p, TX90p, TN10p, TN90p, TG10p, TG90p, R75p, R75pTOT, R95p, R95pTOT, R99p, R99pTOT, CD, CW, WD, WW), period used is 19850101-20141231
+#### Historical
+- GCM/RCM data: `19790101-20141231`
+- Percentile indices: `19850101-20141231`
+
+#### Future
+- GCM/RCM data: `20150101-21001231`
+- Percentile indices: 
+  - Near: `20150101-20441231`
+  - Mid: `20350101-20641231`
+  - Far: `20700101-20991231`
 
 See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/master/indices.md) for a full table and documentation
 
