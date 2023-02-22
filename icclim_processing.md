@@ -50,6 +50,6 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 | Model | Realisation | Processed | QC | Location | Person responsible | Notes |
 | - | - | - | - | - | - | - |
 | BARPA-ERA5 | - | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/ECMWF-ERA5/evaluation/none/CSIRO-CCAM-2203/v1/climdex/` | @chunhsusu | - |
-| BARPA-ACCESS-CM2 | r4i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/` | @ngben, @EmmaHoward | - |
-| BARPA-ACCESS-ESM1-5 | r6i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/` | @ngben, @EmmaHoward | - |
-| BARPA-EC-Earth3 | r1i1p1f1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/` | @ngben, @EmmaHoward | - |
+| BARPA-ACCESS-CM2 | r4i1p1f1 | Historical: :heavy_check_mark:<br>SSP126: :heavy_check_mark:<br>SSP370: :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/` | @ngben, @EmmaHoward | - |
+| BARPA-ACCESS-ESM1-5 | r6i1p1f1 | Historical: :heavy_check_mark:<br>SSP126: :heavy_check_mark:<br>SSP370: :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/` | @ngben, @EmmaHoward | - |
+| BARPA-EC-Earth3 | r1i1p1f1 | Historical: :heavy_check_mark:<br>SSP126: :heavy_check_mark:<br>SSP370: :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/` | @ngben, @EmmaHoward | - |
