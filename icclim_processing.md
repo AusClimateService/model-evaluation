@@ -53,8 +53,8 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 | CCAM-ERA5 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/ECMWF-ERA5/evaluation/none/CSIRO-CCAM-2203/v1/climdex/` | @ngben | - |
 | CCAM-ACCESS-CM2 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
 | CCAM-ACCESS-ESM1-5 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
-| CCAM-CESM2 | Historical:running<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
-| CCAM-CMCC-ESM2 | Historical:running<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
+| CCAM-CESM2 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
+| CCAM-CMCC-ESM2 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
 | CCAM-CNRM-ESM2-1 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
 | CCAM-EC-Earth3 | Historical:running<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
 | CCAM-NorESM2-MM | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/` | @ngben | - |
