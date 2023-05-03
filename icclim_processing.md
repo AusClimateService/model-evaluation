@@ -51,8 +51,13 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 | Model | Processed | QC | Location | Person responsible | Notes |
 | - | - | - | - | - | - |
 | CCAM-ERA5 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/ECMWF-ERA5/evaluation/none/CSIRO-CCAM-2203/v1/climdex/` | @ngben | - |
-| CCAM-NorESM2-MM | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/` | @ngben | - |
+| CCAM-ACCESS-CM2 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
+| CCAM-ACCESS-ESM1-5 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
+| CCAM-CESM2 | Historical:running<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
+| CCAM-CMCC-ESM2 | Historical:running<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
+| CCAM-CNRM-ESM2-1 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
 | CCAM-EC-Earth3 | Historical:running<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
+| CCAM-NorESM2-MM | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/` | @ngben | - |
 
 ### BARPA
 | Model | Processed | QC | Location | Person responsible | Notes |
@@ -62,4 +67,6 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 | BARPA-ACCESS-ESM1-5 | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-15/BOM/CSIRO-BOM-ACCESS-ESM1-5/` | @ngben, @EmmaHoward | - |
 | BARPA-CESM2 | Historical:running<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
 | BARPA-CMCC-ESM2 | Historical:running<br>SSP126::x:<br>SSP370::x: | :x: | :x: | @ngben | - |
+| BARPA-CNRM-ESM2-1 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | - | - |
 | BARPA-EC-Earth3 | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-15/BOM/EC-Earth-Consortium-EC-Earth3/` | @ngben, @EmmaHoward | - |
+| BARPA-NorESM2-MM | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-15/BOM/NCC-NorESM2-MM` | @ngben | - |
