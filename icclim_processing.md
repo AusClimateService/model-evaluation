@@ -32,13 +32,13 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 ---
 ### Observations & Reanalysis
 | Model | Processed | QC | Location | Notes |
-| - | - | - | - | - | - |
+| - | - | - | - | - |
 | AGCDv1 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-r005/none/BOM-AGCD/historical/none/none/none/climdex/` | Missing `tas` |
 | ERA5 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-25/none/ECMWF-ERA5/historical/none/none/none/climdex/` | - |
 
 ### GCMs
 | Model | Processed | QC | Location | Notes |
-| - | - | - | - | - | - |
+| - | - | - | - | - |
 | ACCESS-CM2 | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CSIRO-ARCCSS-ACCESS-CM2/` | - |
 | ACCESS-ESM1-5 | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/CSIRO-ACCESS-ESM1-5/` | - |
 | CESM2  | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/GLOBAL-gn/none/NCAR-CESM2/` | `pr` and `tas` indices calculated, missing historical daily `tasmax` and `tasmin` |
@@ -49,7 +49,7 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 
 ### CCAM
 | Model | Processed | QC | Location | Notes |
-| - | - | - | - | - | - |
+| - | - | - | - | - |
 | CCAM-ERA5 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/ECMWF-ERA5/evaluation/none/CSIRO-CCAM-2203/v1/climdex/` | - |
 | CCAM-ACCESS-CM2 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | - |
 | CCAM-ACCESS-ESM1-5 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | - |
@@ -61,7 +61,7 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 
 ### BARPA
 | Model | Processed | QC | Location | Notes |
-| - | - | - | - | - | - |
+| - | - | - | - | - |
 | BARPA-ERA5 | :heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/ECMWF-ERA5/evaluation/none/CSIRO-CCAM-2203/v1/climdex/` | - |
 | BARPA-ACCESS-CM2 | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-15/BOM/CSIRO-ARCCSS-ACCESS-CM2/` | - |
 | BARPA-ACCESS-ESM1-5 | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-15/BOM/CSIRO-ACCESS-ESM1-5/` | - |
