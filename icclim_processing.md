@@ -56,7 +56,7 @@ See [indices.md](https://github.com/AusClimateService/model-evaluation/blob/mast
 | CCAM-CESM2 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | - |
 | CCAM-CMCC-ESM2 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | - |
 | CCAM-CNRM-ESM2-1 | Historical::x:<br>SSP126::x:<br>SSP370::x: | :x: | :x: | - |
-| CCAM-EC-Earth3 | Historical::heavy_check_mark:<br>SSP126::x:<br>SSP370::x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/EC-Earth-Consortium-EC-Earth3/` | :x: | - |
+| CCAM-EC-Earth3 | Historical::heavy_check_mark:<br>SSP126::x:<br>SSP370::x: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/EC-Earth-Consortium-EC-Earth3/` | - |
 | CCAM-NorESM2-MM | Historical::heavy_check_mark:<br>SSP126::heavy_check_mark:<br>SSP370::heavy_check_mark: | :x: | `/g/data/ia39/australian-climate-service/test-data/CORDEX-CMIP6/indices/AUS-10/CSIRO/NCC-NorESM2-MM/` | - |
 
 ### BARPA
